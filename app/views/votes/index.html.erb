@@ -25,3 +25,11 @@
 Kinoko point : <%= @kinoko_point %> <br>
 Takenoko point : <%= @takenoko_point %> <br>
 <%= link_to 'New Vote', new_vote_path %>
+
+<div id="chats">
+<% @chats.each do |chat| %>
+  <%= render 'show', chat: chat %>
+<% end %>
+
+</div>
+<%= render 'form_chat' %>
