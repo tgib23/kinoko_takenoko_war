@@ -10,6 +10,8 @@ class VotesController < ApplicationController
       @takenoko_point += 1 if vote.party == 'takenoko'
       @kinoko_point += 1 if vote.party == 'kinoko'
     }
+    @chats = Chat.all
+    @chat = Chat.new
   end
 
   # GET /votes/1
