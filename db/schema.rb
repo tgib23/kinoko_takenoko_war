@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104040814) do
+ActiveRecord::Schema.define(version: 20141104044055) do
 
   create_table "votes", force: true do |t|
     t.text     "party"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "company"
   end
 
 end
