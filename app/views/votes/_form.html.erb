@@ -1,0 +1,28 @@
+<%= form_for(@vote) do |f| %>
+  <% if @vote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vote.errors.count, "error") %> prohibited this vote from being saved:</h2>
+
+      <ul>
+      <% @vote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :party, 'kinoko' %>
+    <%= f.radio_button :party, 'kinoko', :checked => true %><br>
+    <%= image_tag "kinoko.png", :size => "256x256" %>
+
+    <%= f.label :party, 'takenoko' %>
+    <%= f.radio_button :party, 'takenoko', :checked => false %><br>
+    <%= image_tag "takenoko.png", :size => "256x256" %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
