@@ -13,23 +13,24 @@
 
   <div class="field">
     <%= f.label :party, 'kinoko' %>
-    <%= f.radio_button :party, 'kinoko', :checked => true %><br>
-    <%= image_tag "kinoko.png", :size => "256x256" %>
+    <%= f.radio_button :party, 'kinoko', :checked => true %>
+    <%= image_tag "kinoko.png", :size => "256x256", :class => :chocolate_form_elem_right %>
 
-    <%= f.label :party, 'takenoko' %>
-    <%= f.radio_button :party, 'takenoko', :checked => false %><br>
+    <%= f.label :party, 'takenoko', :class => :chocolate_form_elem_left %>
+    <%= f.radio_button :party, 'takenoko', :checked => false %>
     <%= image_tag "takenoko.png", :size => "256x256" %>
 
+    <br /><br /><br />
     <%= f.label :company, 'Signal' %>
-    <%= f.radio_button :company, 'signal', :checked => true %> <br>
+    <%= f.radio_button :company, 'signal', :class => :chocolate_form_elem_right, :checked => true %>
 
-    <%= f.label :company, 'YJ' %>
-    <%= f.radio_button :company, 'yj', :checked => false %> <br>
+    <%= f.label :company, 'YJ', :class => :chocolate_form_elem_left %>
+    <%= f.radio_button :company, 'yj', :checked => false %>
 
   </div>
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit('Here for Vote') %>
   </div>
 <% end %>
