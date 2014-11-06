@@ -1,41 +1,67 @@
-<h1>Listing votes</h1>
+<h1>Thanks For Your Vote!</h1>
+<h5>The result will be studied, considered, and reflected to another chance of visiting Signal. Maybe,,,</h5>
 
-<table>
-  <thead>
-    <tr>
-      <th>Party</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @votes.each do |vote| %>
-      <tr>
-        <td><%= vote.party %></td>
-        <td><%= vote.company %></td>
-        <td><%= link_to 'Show', vote %></td>
-        <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
-        <td><%= link_to 'Destroy', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div id="results">
+  <div id="kinoko_results">
+    kinoko
+    <div id="kinoko_point">
+      <%= @kinoko_point %>
+    </div>
+    <div id="kinoko_detail">
+      <div id="kinoko_signal">
+        <% @kinoko_signal_point.times do %>
+          <%= image_tag "kinoko.png", :size => "25x25" %><br>
+        <% end %>
+        signal
+      </div>
+      <div id="kinoko_yj">
+        <% @kinoko_yj_point.times do %>
+          <%= image_tag "kinoko.png", :size => "25x25" %><br>
+        <% end %>
+        yj
+      </div>
+    </div>
+  </div>
+
+  <div id="takenoko_results">
+    takenoko
+    <div id="takenoko_point">
+      <%= @takenoko_point %>
+    </div>
+    <div id="takenoko_detail">
+      <div id="takenoko_signal">
+        <% @takenoko_signal_point.times do %>
+          <%= image_tag "takenoko.png", :size => "25x25" %><br>
+        <% end %>
+        signal
+      </div>
+      <div id="takenoko_yj">
+        <% @takenoko_yj_point.times do %>
+          <%= image_tag "takenoko.png", :size => "25x25" %><br>
+        <% end %>
+        yj
+      </div>
+    </div>
+  </div>
+</div>
 
 <br>
-Kinoko point : <%= @kinoko_point %> <br>
-Takenoko point : <%= @takenoko_point %> <br>
-<%= link_to 'New Vote', new_vote_path %>
+<div id="joint">
+</div>
+<br>
 
 <div id="chats">
 <% @chats.each do |chat| %>
   <%= render 'show', chat: chat %>
 <% end %>
-
 </div>
-<%= render 'form_chat' %>
+
 
 <div id="chat_area">
 </div>
+
+<%= render 'form_chat' %>
 
 <script>
   var ws_rails = new WebSocketRails("localhost:3001/websocket");

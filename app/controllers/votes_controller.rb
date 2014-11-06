@@ -6,9 +6,25 @@ class VotesController < ApplicationController
   def index
     @votes = Vote.all
     @takenoko_point = @kinoko_point = 0
+    @takenoko_signal_point = @takenoko_yj_point = 0
+    @kinoko_signal_point = @kinoko_yj_point = 0
+
     @votes.each {|vote|
-      @takenoko_point += 1 if vote.party == 'takenoko'
-      @kinoko_point += 1 if vote.party == 'kinoko'
+      if vote.party == 'takenoko'
+        @takenoko_point += 1
+        if vote.company == 'signal'
+          @takenoko_signal_point += 1
+        else
+          @takenoko_yj_point += 1
+        end 
+      elsif vote.party == 'kinoko'
+        @kinoko_point += 1 
+        if vote.company == 'signal'
+          @kinoko_signal_point += 1
+        else
+          @kinoko_yj_point += 1
+        end 
+      end
     }
     @chats = Chat.all
     @chat = Chat.new

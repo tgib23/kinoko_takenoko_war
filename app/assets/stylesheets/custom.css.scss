@@ -1,2 +1,126 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+h5 {
+  text-align: center;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+#chocolate_form {
+  text-align: center;
+}
+
+.chocolate_form_elem_left {
+  margin-left: 50px;
+}
+.chocolate_form_elem_right {
+  margin-right: 50px;
+}
+
+#results {
+  text-align: center;
+  border: 100px;
+  #kinoko_detail {
+  }
+}
+
+#kinoko_results {
+  position: relative;
+  float: left;
+  border: 100px;
+  margin: 50px;
+  left: 25%;
+}
+
+
+#takenoko_results {
+  position: relative;
+  float: left;
+  margin: 50px;
+  left: 45%;
+}
+
+#kinoko_point{
+  font-size: 800%;
+  color: red;
+}
+
+#takenoko_point {
+  font-size: 800%;
+  color: blue;
+}
+
+#kinoko_signal {
+  margin: 10px;
+  float: left;
+
+}
+#kinoko_yj {
+  margin: 10px;
+  float: right;
+}
+
+#takenoko_signal {
+  margin: 10px;
+  float: left;
+}
+#takenoko_yj {
+  margin: 10px;
+  float: right;
+}
+#joint {
+  float: clear;
+}
+#chats {
+  text-align: center;
+  margin: 500px;
+  border: 100px;
+}
