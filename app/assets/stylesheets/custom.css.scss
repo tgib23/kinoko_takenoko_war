@@ -67,9 +67,9 @@ p {
 
 #results {
   text-align: center;
-  border: 100px;
-  #kinoko_detail {
-  }
+  border: 10px;
+  margin: 10px;
+  overflow: hidden;
 }
 
 #kinoko_results {
@@ -118,9 +118,39 @@ p {
 }
 #joint {
   float: clear;
+  text-align: left;
+  margin-left: 30%;
+  color: gray;
 }
 #chats {
-  text-align: center;
-  margin: 500px;
-  border: 100px;
+  margin-left: 30%;
+  border-left: 10%;
+}
+.chat {
+  overflow: hidden;
+}
+.chat_name {
+  position: relative;
+  width: 100px;
+  border-left: 20%;  
+  float: left;
+}
+.chat_comment {
+  position: relative;
+  width: 60%;
+  border-right: 10%;
+  float: left;
+}
+
+.hr {
+  margin-right:20%;
+  float: both;
+}
+#dynamic_chat_area {
+  margin-left: 30%;
+  border-left: 10%;
+}
+#chat_form {
+  border-left: 20%;
+  margin-left: 30%;
 }

@@ -48,6 +48,7 @@
 
 <br>
 <div id="joint">
+leave comments if you have any.
 </div>
 <br>
 
@@ -58,18 +59,41 @@
 </div>
 
 
-<div id="chat_area">
+<div id="dynamic_chat_area">
 </div>
 
+<div id="chat_form">
 <%= render 'form_chat' %>
+</div>
 
 <script>
   var ws_rails = new WebSocketRails("localhost:3001/websocket");
 
   ws_rails.bind("websocket_chat", function(message){
-    var message_li = document.createElement("p");
-    message_li.textContent = message;
-    document.getElementById("chat_area").appendChild(message_li);
+    var split_array = message.split("\001");
+    var chat_name = split_array[0];
+    var chat_message = split_array[1];
+
+    var dynamic_chat = document.createElement('div');
+    dynamic_chat.className = 'chat';
+    
+    var name_doc = document.createElement('div');
+    name_doc.className = 'chat_name';
+    name_doc.textContent = chat_name;
+
+    var message_doc = document.createElement('div');
+    message_doc.className = 'chat_comment';
+    message_doc.textContent = chat_message;
+
+    dynamic_chat.appendChild(name_doc);
+    dynamic_chat.appendChild(message_doc);
+
+    var hr_doc = document.createElement('div');
+    hr_doc.className = 'hr';
+    hr_doc.appendChild(document.createElement('hr'));
+    
+    document.getElementById("dynamic_chat_area").appendChild(dynamic_chat);
+    document.getElementById("dynamic_chat_area").appendChild(hr_doc);
   })
   document.getElementById("send").onclick =  function(){
     var comment = document.getElementById("comment").value;
