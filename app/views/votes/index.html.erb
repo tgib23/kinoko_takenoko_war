@@ -67,7 +67,8 @@ leave comments if you have any.
 </div>
 
 <script>
-  var ws_rails = new WebSocketRails("localhost:3001/websocket");
+  var websocket_host = location.host.split(":")[0] + "/websocket";
+  var ws_rails = new WebSocketRails(websocket_host);
 
   ws_rails.bind("websocket_chat", function(message){
     var split_array = message.split("\001");
