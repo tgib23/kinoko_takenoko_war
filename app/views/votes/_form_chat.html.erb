@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name, :id => :name %>
+    <%= f.text_field :name, :id => :name, :size => 35, :placeholder => "Sexy Deforestation" %>
   </div>
   <div class="field">
     <%= f.label :comment %><br>
-    <%= f.text_area :comment, :id => :comment %>
+    <%= f.text_area :comment, :id => :comment, :size => "80x10", :placeholder => "I would rather cut some trees" %>
   </div>
   <div class="actions">
     <%= f.submit(:id => 'send') %>
